@@ -5,14 +5,13 @@ vspm_if-objs := $(CFILES:.c=.o)
 
 U_INCLUDE := -I$(PWD)
 U_INCLUDE += -I$(PWD)/../include
-U_INCLUDE += -I$(KERNELSRC)/include
+U_INCLUDE += -I$(ANDROID_BUILD_TOP)/hardware/renesas/vspm/vspm-module/files/vspm/include/
 EXTRA_CFLAGS += $(U_INCLUDE)
 
 all:
-	make -C $(KERNELSRC) M=$(PWD) KBUILD_EXTRA_SYMBOLS=$(KERNELSRC)/include/vspm.symvers modules
+	make -C $(KERNELDIR) M=$(PWD) KBUILD_EXTRA_SYMBOLS=$(KERNELSRC)/include/vspm.symvers modules
 clean:
-	make -C $(KERNELSRC) M=$(PWD) clean
+	make -C $(KERNELDIR) M=$(PWD) clean
 install:
-	$(CP) ../include/vspm_if.h $(KERNELSRC)/include
 	$(CP) ../include/vspm_if.h $(INCSHARED)
 
