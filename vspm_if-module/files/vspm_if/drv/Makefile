@@ -9,7 +9,7 @@ U_INCLUDE += -I$(ANDROID_BUILD_TOP)/hardware/renesas/vspm/vspm-module/files/vspm
 EXTRA_CFLAGS += $(U_INCLUDE)
 
 all:
-	make -C $(KERNELDIR) M=$(PWD) KBUILD_EXTRA_SYMBOLS=$(KERNELSRC)/include/vspm.symvers modules
+	make -C $(KERNELDIR) M=$(PWD) modules
 clean:
 	make -C $(KERNELDIR) M=$(PWD) clean
 install:
