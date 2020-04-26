@@ -64,6 +64,7 @@
 #include <linux/dma-mapping.h>
 #include <linux/fs.h>
 #include <linux/ioctl.h>
+#include <linux/of.h>
 
 #include "vspm_public.h"
 #include "vspm_if.h"
